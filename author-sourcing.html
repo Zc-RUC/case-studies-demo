@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Author Sourcing 项目案例：从论文作者到经身份核验、证据补全的人才线索。" />
+    <title>Author Sourcing · 项目案例</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">ZC<span>/</span>CASE STUDIES</a>
+        <nav class="site-nav" aria-label="案例导航">
+          <a href="lab-mapper.html">Lab Mapper</a>
+          <a href="ddl-mission.html">DDL.MISSION</a>
+          <a href="author-sourcing.html" aria-current="page">Author Sourcing</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="section-shell">
+      <div class="breadcrumb"><a href="index.html">精选案例</a> / Author Sourcing</div>
+      <section class="case-hero">
+        <p class="case-kicker">Research Talent · 作者寻访</p>
+        <h1>Author Sourcing：<br />从论文作者到人才线索</h1>
+        <p class="case-summary">论文名单只是入口，真正难的是确认“这个人是谁、现在在哪、是否适合”。这个 Skill 将身份消歧、多源资料补全和研究匹配整合成可复核的作者寻访流程。</p>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://zc-ruc.github.io/-/assets/skills/author-sourcing-skill.zip" target="_blank" rel="noreferrer">下载 Skill 源码包 ↗</a>
+          <a class="button" href="https://zc-ruc.github.io/-/#projects" target="_blank" rel="noreferrer">查看原项目入口 ↗</a>
+        </div>
+      </section>
+
+      <section class="metric-strip" aria-label="项目成果概览">
+        <div class="metric"><strong>3 个</strong><span>EuroSys / ASPLOS / FAST 方向</span></div>
+        <div class="metric"><strong>18 个</strong><span>结构化输出字段</span></div>
+        <div class="metric"><strong>多源</strong><span>主页、Scholar、GitHub、DBLP 等核验</span></div>
+        <div class="metric"><strong>逐行</strong><span>研究匹配、证据与置信度</span></div>
+      </section>
+
+      <section class="showcase" aria-labelledby="demo-title">
+        <div class="showcase-heading">
+          <h2 id="demo-title">从论文到候选人档案</h2>
+          <p>官方示例数据 · 非实时抓取</p>
+        </div>
+        <div class="browser" data-demo="author">
+          <div class="browser-bar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="browser-title">Author Sourcing · 流程演示</span>
+            <span class="demo-badge">示例数据</span>
+          </div>
+          <div class="demo-body">
+            <div class="demo-input">
+              <span class="demo-input-label">输入</span>
+              <code>Example: Efficient Distributed Training for Large Models · FAST 2026</code>
+            </div>
+            <div class="demo-controls">
+              <button class="button button-primary button-small" type="button" data-demo-run>运行流程演示</button>
+              <button class="button button-small" type="button" data-demo-reset>重置</button>
+              <span class="demo-status" data-demo-status aria-live="polite"></span>
+            </div>
+            <ol class="demo-steps">
+              <li data-demo-step data-status="正在解析论文标题、会议、年份与作者顺序">解析论文元数据与作者顺序</li>
+              <li data-demo-step data-status="正在用论文与机构证据消歧作者身份">用论文与机构证据消歧身份</li>
+              <li data-demo-step data-status="正在补全主页、导师、实验室和当前机构">补全主页、导师、实验室与机构</li>
+              <li data-demo-step data-status="正在生成研究匹配、证据 URL 与置信度">生成研究匹配、证据与置信度</li>
+            </ol>
+            <div class="demo-output" data-demo-output hidden>
+              <div class="output-heading">
+                <h3>候选人线索输出</h3>
+                <span class="badge">1 条官方示例</span>
+              </div>
+              <div class="table-scroll">
+                <table class="output-table">
+                  <thead><tr><th>作者</th><th>位置</th><th>当前身份</th><th>导师 / 实验室</th><th>研究匹配</th><th>判断</th><th>置信度</th></tr></thead>
+                  <tbody><tr><td>Alex Chen</td><td>第 1 作者</td><td>Example University · PhD student</td><td>Prof. Jane Doe · Example Systems Lab</td><td>ML systems; distributed training</td><td><span class="badge">YES</span></td><td><span class="badge">high</span></td></tr></tbody>
+                </table>
+              </div>
+              <p class="output-note">证据：example.edu/alex。此示例与 Skill 包中的 example-output.csv 一致，并非真实作者或候选人。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="story-grid">
+        <div class="story-stack">
+          <article class="story-block">
+            <span class="story-index">01 / 实际问题</span>
+            <h2>作者名字不等于可跟进的人才线索</h2>
+            <p>同名作者、机构变化、导师与个人主页分散，让人工跨站搜索既慢又容易误认。只有姓名和论文，无法直接判断研究方向、职业阶段与联系方式。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">02 / 我的职责</span>
+            <h2>把寻访经验拆成身份核验与信息补全规则</h2>
+            <p>我设计论文元数据解析、同名消歧、多源资料补全和候选人判断流程，覆盖 EuroSys、ASPLOS、FAST 等方向的论文作者寻访。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">03 / 解决流程</span>
+            <h2>先确认身份，再判断研究匹配</h2>
+            <ul class="flow-list">
+              <li>解析论文、会议、年份、作者顺序与机构信息，保留高优先级作者线索。</li>
+              <li>用论文、机构、出版物和合作者证据消歧，再补全主页、GitHub、Scholar、导师与实验室。</li>
+              <li>输出研究匹配、YES / MAYBE / NO 判断、证据 URL、备注与置信度。</li>
+            </ul>
+          </article>
+        </div>
+        <aside>
+          <div class="fact-panel">
+            <span class="story-index">04 / 技术实现</span>
+            <h2>多源检索，但不把搜索结果当事实</h2>
+            <ul>
+              <li><strong>输入兼容：</strong>论文标题、URL、PDF、会议页面、arXiv 或作者列表。</li>
+              <li><strong>多源核验：</strong>个人主页、大学与实验室页面、Scholar、GitHub、DBLP 等相互印证。</li>
+              <li><strong>质量检查：</strong>不编造导师、邮箱或学位；身份不确定时降低置信度，未知字段明确写 Unknown。</li>
+            </ul>
+          </div>
+          <div class="fact-panel">
+            <span class="story-index">05 / 成果数据</span>
+            <h2>把阅读名单变成可行动的人才清单</h2>
+            <p>以 18 个字段呈现论文、作者身份、当前机构、导师、联系方式、研究匹配、判断与证据。团队可以先看匹配与证据，再决定如何跟进。</p>
+            <div class="before-after">
+              <div class="compare-card"><strong>过去</strong><p>跨站搜索、同名难辨、信息难复核</p></div>
+              <div class="compare-card"><strong>现在</strong><p>身份消歧、资料补全、证据化线索</p></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="case-footer-nav" aria-label="案例前后导航">
+        <a href="ddl-mission.html">← 上一个：DDL.MISSION</a>
+        <a href="index.html">返回精选案例 →</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">独立案例预览 · 不改动原个人主页 · 示例数据已标注</footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

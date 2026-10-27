@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Lab Mapper 项目案例：从实验室页面到结构化人才 Mapping，500+ 人与数倍效率提升。" />
+    <title>Lab Mapper · 项目案例</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">ZC<span>/</span>CASE STUDIES</a>
+        <nav class="site-nav" aria-label="案例导航">
+          <a href="lab-mapper.html" aria-current="page">Lab Mapper</a>
+          <a href="ddl-mission.html">DDL.MISSION</a>
+          <a href="author-sourcing.html">Author Sourcing</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="section-shell">
+      <div class="breadcrumb"><a href="index.html">精选案例</a> / Lab Mapper</div>
+      <section class="case-hero">
+        <p class="case-kicker">AI Agent · 招聘提效</p>
+        <h1>Lab Mapper：<br />把实验室页面变成人才地图</h1>
+        <p class="case-summary">面对 27 届相关实验室硕博寻访，逐个复制信息既慢又难复核。这个 Skill 把链接转化为带证据、毕业年份、候选人判断和置信度的 Mapping 表。</p>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://zc-ruc.github.io/-/assets/skills/lab-mapper-skill.zip" target="_blank" rel="noreferrer">下载 Skill ↗</a>
+          <a class="button" href="https://github.com/Zc-RUC/Mapping-" target="_blank" rel="noreferrer">查看源码 ↗</a>
+        </div>
+      </section>
+
+      <section class="metric-strip" aria-label="项目成果概览">
+        <div class="metric"><strong>500+</strong><span>硕博毕业生 Mapping</span></div>
+        <div class="metric"><strong>数倍</strong><span>较上一届全人工流程提速</span></div>
+        <div class="metric"><strong>16 个</strong><span>结构化输出字段</span></div>
+        <div class="metric"><strong>逐行</strong><span>保留证据与置信度</span></div>
+      </section>
+
+      <section class="showcase" aria-labelledby="demo-title">
+        <div class="showcase-heading">
+          <h2 id="demo-title">从链接到 Mapping 表</h2>
+          <p>官方示例数据 · 非实时抓取</p>
+        </div>
+        <div class="browser" data-demo="lab">
+          <div class="browser-bar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="browser-title">Lab Mapper · 流程演示</span>
+            <span class="demo-badge">示例数据</span>
+          </div>
+          <div class="demo-body">
+            <div class="demo-input">
+              <span class="demo-input-label">输入</span>
+              <code>https://example.edu/research-group/people</code>
+            </div>
+            <div class="demo-controls">
+              <button class="button button-primary button-small" type="button" data-demo-run>运行流程演示</button>
+              <button class="button button-small" type="button" data-demo-reset>重置</button>
+              <span class="demo-status" data-demo-status aria-live="polite"></span>
+            </div>
+            <ol class="demo-steps">
+              <li data-demo-step data-status="正在读取实验室与导师官方页面">读取官方实验室与导师页面</li>
+              <li data-demo-step data-status="正在核对个人主页、CV 与公开证据">核对个人主页、CV 与公开证据</li>
+              <li data-demo-step data-status="正在推断学位、入学与毕业年份">推断学位、入学与毕业年份</li>
+              <li data-demo-step data-status="正在生成判断、证据 URL 与置信度">生成判断、证据 URL 与置信度</li>
+            </ol>
+            <div class="demo-output" data-demo-output hidden>
+              <div class="output-heading">
+                <h3>结构化 Mapping 输出</h3>
+                <span class="badge">1 条官方示例</span>
+              </div>
+              <div class="table-scroll">
+                <table class="output-table">
+                  <thead><tr><th>姓名</th><th>学位</th><th>研究方向</th><th>预计毕业</th><th>判断</th><th>置信度</th></tr></thead>
+                  <tbody><tr><td>Alex Chen</td><td>PhD</td><td>Distributed systems; storage</td><td>2027</td><td><span class="badge">YES</span></td><td><span class="badge badge-warm">medium</span></td></tr></tbody>
+                </table>
+              </div>
+              <p class="output-note">导师：Prof. Jane Doe · 实验室：Example Systems Lab · 入学：2022 · 证据：example.edu/research-group/people。此示例与 Skill 包中的 example-output.csv 一致，并非真实候选人。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="story-grid">
+        <div class="story-stack">
+          <article class="story-block">
+            <span class="story-index">01 / 实际问题</span>
+            <h2>信息分散，人工 Mapping 难以规模化</h2>
+            <p>学生信息散落在实验室、导师、个人主页、CV 和 Scholar 页面。面对数百名候选人，逐项查找、复制和核验不仅耗时，也容易出现毕业时间与身份误判。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">02 / 我的职责</span>
+            <h2>把业务规则整理成可复用的 Agent 工作流</h2>
+            <p>我负责配置 Codex Skill，定义输入输出、来源优先级、毕业年份推断、候选人判断与质量检查规则，并将它应用到 27 届实验室 Mapping 中。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">03 / 解决流程</span>
+            <h2>先核验，再结构化，再判断</h2>
+            <ul class="flow-list">
+              <li>从官方实验室、导师和成员页面开始，跟踪个人主页与公开资料。</li>
+              <li>补全研究方向、联系方式、主页与经历，保守推断入学和毕业时间。</li>
+              <li>输出 YES / MAYBE / NO 判断，同时保留证据 URL 和置信度。</li>
+            </ul>
+          </article>
+        </div>
+        <aside>
+          <div class="fact-panel">
+            <span class="story-index">04 / 技术实现</span>
+            <h2>不仅是“自动搜集”，更是可复核的规则</h2>
+            <ul>
+              <li><strong>Codex + Agent Workflow：</strong>将链接解析、资料补全和表格输出串成可复用流程。</li>
+              <li><strong>16 个字段：</strong>覆盖学位、导师、实验室、时间、研究方向、证据与判断。</li>
+              <li><strong>质量检查：</strong>不猜测邮箱，不随意合并同名候选人；未知字段明确写 Unknown，并标注置信度。</li>
+            </ul>
+          </div>
+          <div class="fact-panel">
+            <span class="story-index">05 / 成果数据</span>
+            <h2>从重复劳动到批量交付</h2>
+            <p>累计完成 500+ 名相关实验室硕博毕业生 Mapping，较上一届全人工流程提速数倍。每行保留证据，便于团队复核与后续跟进。</p>
+            <div class="before-after">
+              <div class="compare-card"><strong>过去</strong><p>逐页查找、手动复制、反复核验</p></div>
+              <div class="compare-card"><strong>现在</strong><p>链接输入、证据核验、结构化输出</p></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="case-footer-nav" aria-label="案例前后导航">
+        <a href="index.html">← 返回精选案例</a>
+        <a href="ddl-mission.html">下一个：DDL.MISSION →</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">独立案例预览 · 不改动原个人主页 · 示例数据已标注</footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
