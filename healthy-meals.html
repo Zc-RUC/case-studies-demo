@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="减脂餐 · 京东科技大厦项目案例：餐单、商家比价、记账、体重趋势、周报与云端同步。" />
+    <title>减脂餐 · 项目案例</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">ZC<span>/</span>CASE STUDIES</a>
+        <nav class="site-nav" aria-label="案例导航">
+          <a href="lab-mapper.html">Lab Mapper</a>
+          <a href="ddl-mission.html">DDL.MISSION</a>
+          <a href="author-sourcing.html">Author Sourcing</a>
+          <a href="healthy-meals.html" aria-current="page">Healthy Meals</a>
+          <a href="daily-paper-briefing.html">Daily Paper</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="section-shell">
+      <div class="breadcrumb"><a href="index.html">精选案例</a> / Healthy Meals</div>
+      <section class="case-hero">
+        <p class="case-kicker">独立开发 · 生活管理</p>
+        <h1>减脂餐：<br />把饮食选择变成可执行计划</h1>
+        <p class="case-summary">周边轻食选择多、价格和营养信息分散，靠记忆做决策难坚持。这个移动端小站把餐单、比价、花费和体重趋势放在同一套日常流程里。</p>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://zc-ruc.github.io/jianzhi-meals/" target="_blank" rel="noreferrer">打开在线 Demo ↗</a>
+          <a class="button" href="https://github.com/Zc-RUC/jianzhi-meals" target="_blank" rel="noreferrer">查看源码 ↗</a>
+        </div>
+      </section>
+
+      <section class="metric-strip" aria-label="项目成果概览">
+        <div class="metric"><strong>1900–2100</strong><span>kcal / 日热量目标</span></div>
+        <div class="metric"><strong>120–140g</strong><span>每日蛋白质目标</span></div>
+        <div class="metric"><strong>¥60</strong><span>每日餐补当日清零提醒</span></div>
+        <div class="metric"><strong>88 → 75kg</strong><span>体重趋势目标</span></div>
+      </section>
+
+      <section class="showcase" aria-labelledby="screenshot-title">
+        <div class="showcase-heading">
+          <h2 id="screenshot-title">真实产品界面</h2>
+          <p>来自项目仓库的真实截图</p>
+        </div>
+        <div class="browser">
+          <div class="browser-bar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="browser-title">减脂餐 · 京东科技大厦</span>
+            <span class="demo-badge">真实截图</span>
+          </div>
+          <img src="assets/healthy-meals.jpg" alt="减脂餐工具真实界面：热量与蛋白质目标、餐补信息，以及一周午晚餐和实测价格" loading="eager" />
+          <div class="demo-body">
+            <ol class="demo-steps">
+              <li><strong>输入</strong><br />热量、蛋白质目标与周边商家</li>
+              <li><strong>运行</strong><br />餐单搭配、商家比价与实测价</li>
+              <li><strong>记录</strong><br />每日餐饮花费与体重变化</li>
+              <li><strong>产出</strong><br />周报、进度回顾与下周调整</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <div class="story-grid">
+        <div class="story-stack">
+          <article class="story-block">
+            <span class="story-index">01 / 实际问题</span>
+            <h2>健康饮食的目标，常被日常选择成本打断</h2>
+            <p>餐单、价格、热量和花费分散在不同页面与记录里。每次选餐都要重新比较，记账和体重回顾又彼此割裂，长期执行很难形成闭环。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">02 / 我的职责</span>
+            <h2>围绕真实办公场景设计完整日常流程</h2>
+            <p>我围绕京东科技大厦的餐饮选择，设计一周餐单、周边商家比价和实测价，并把记账、体重趋势、周报与多端同步整合到同一个移动端应用中。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">03 / 解决流程</span>
+            <h2>先给计划，再记录执行，最后复盘</h2>
+            <ul class="flow-list">
+              <li>按热量和蛋白质目标搭配一周午晚餐，并标注价格与营养信息。</li>
+              <li>比较商家评分、人均、距离和代表价，降低日常选餐成本。</li>
+              <li>记录每日花费与体重变化，通过周报回顾进度并调整下一周计划。</li>
+            </ul>
+          </article>
+        </div>
+        <aside>
+          <div class="fact-panel">
+            <span class="story-index">04 / 技术实现</span>
+            <h2>单文件、移动端优先，也能多端同步</h2>
+            <ul>
+              <li><strong>原生 HTML/CSS/JS：</strong>零依赖、零构建，打开单文件即可使用。</li>
+              <li><strong>localStorage：</strong>默认在浏览器本地保存餐单、花费和体重数据。</li>
+              <li><strong>Cloudflare Worker：</strong>在需要时合并多端数据，实现云端同步。</li>
+              <li><strong>深色模式：</strong>跟随系统或手动切换，适应不同使用环境。</li>
+            </ul>
+          </div>
+          <div class="fact-panel">
+            <span class="story-index">05 / 成果数据</span>
+            <h2>把健康目标拆成每天可执行的选择</h2>
+            <p>围绕 1900–2100 kcal/日、120–140g 蛋白质目标设计餐单，配合约 0.5kg/周的减重节奏、¥60 餐补提醒和 88kg → 75kg 的体重趋势目标。</p>
+            <div class="before-after">
+              <div class="compare-card"><strong>过去</strong><p>凭记忆选餐、手动算账、缺少回顾</p></div>
+              <div class="compare-card"><strong>现在</strong><p>按目标选餐、自动汇总、每周复盘</p></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="case-footer-nav" aria-label="案例前后导航">
+        <a href="author-sourcing.html">← 上一个：Author Sourcing</a>
+        <a href="daily-paper-briefing.html">下一个：Daily Paper Briefing →</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">独立案例预览 · 不改动原个人主页 · 真实项目截图</footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

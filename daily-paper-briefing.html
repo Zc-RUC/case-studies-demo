@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Daily Paper Briefing Skill 项目案例：每日论文筛选、摘要、作者线索与后续行动，含官方示例速报。" />
+    <title>Daily Paper Briefing · 项目案例</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">ZC<span>/</span>CASE STUDIES</a>
+        <nav class="site-nav" aria-label="案例导航">
+          <a href="lab-mapper.html">Lab Mapper</a>
+          <a href="ddl-mission.html">DDL.MISSION</a>
+          <a href="author-sourcing.html">Author Sourcing</a>
+          <a href="healthy-meals.html">Healthy Meals</a>
+          <a href="daily-paper-briefing.html" aria-current="page">Daily Paper</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="section-shell">
+      <div class="breadcrumb"><a href="index.html">精选案例</a> / Daily Paper Briefing</div>
+      <section class="case-hero">
+        <p class="case-kicker">自动化 · 研究动态</p>
+        <h1>Daily Paper Briefing：<br />让论文动态和人才线索每天抵达</h1>
+        <p class="case-summary">每天新发论文数量多，人工筛选和整理作者信息难以持续。这个 Skill 将论文筛选、一句话摘要、作者线索和后续行动串成自动化速报。</p>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://zc-ruc.github.io/-/assets/skills/daily-paper-briefing-skill.zip" target="_blank" rel="noreferrer">下载 Skill 源码包 ↗</a>
+          <a class="button" href="https://zc-ruc.github.io/-/#projects" target="_blank" rel="noreferrer">查看原项目入口 ↗</a>
+        </div>
+      </section>
+
+      <section class="metric-strip" aria-label="项目成果概览">
+        <div class="metric"><strong>每日</strong><span>自动生成论文速报</span></div>
+        <div class="metric"><strong>2 个</strong><span>飞书工具：Aime / Mira</span></div>
+        <div class="metric"><strong>多源</strong><span>官方论文来源、去重与相关性筛选</span></div>
+        <div class="metric"><strong>2 条</strong><span>Author Sourcing / Lab Mapper 后续工作流</span></div>
+      </section>
+
+      <section class="showcase" aria-labelledby="demo-title">
+        <div class="showcase-heading">
+          <h2 id="demo-title">从新发论文到每日速报</h2>
+          <p>官方示例数据 · 非实时抓取</p>
+        </div>
+        <div class="browser" data-demo="paper">
+          <div class="browser-bar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="browser-title">Daily Paper Briefing · 流程演示</span>
+            <span class="demo-badge">示例数据</span>
+          </div>
+          <div class="demo-body">
+            <div class="demo-input">
+              <span class="demo-input-label">输入</span>
+              <code>AI Infra & systems · 2026-06-01</code>
+            </div>
+            <div class="demo-controls">
+              <button class="button button-primary button-small" type="button" data-demo-run>运行流程演示</button>
+              <button class="button button-small" type="button" data-demo-reset>重置</button>
+              <span class="demo-status" data-demo-status aria-live="polite"></span>
+            </div>
+            <ol class="demo-steps">
+              <li data-demo-step data-status="正在确定日期、研究方向和输出要求">确定日期、方向与输出要求</li>
+              <li data-demo-step data-status="正在从官方来源收集论文并去重">收集论文并按标题与 ID 去重</li>
+              <li data-demo-step data-status="正在按相关性筛选并生成简短摘要">按相关性筛选并生成简短摘要</li>
+              <li data-demo-step data-status="正在生成作者线索与后续行动">生成作者线索与后续行动</li>
+            </ol>
+            <div class="demo-output" data-demo-output hidden>
+              <div class="output-heading">
+                <h3>Daily Paper Briefing</h3>
+                <span class="badge">2026-06-01</span>
+              </div>
+              <div class="before-after">
+                <div class="compare-card">
+                  <strong>Top Paper · High</strong>
+                  <p><strong>Example Paper on Distributed Inference</strong></p>
+                  <p>提出降低多租户 LLM 推理尾延迟的调度方法，与 AI Infra serving 和系统优化高度相关。来源：arXiv。</p>
+                </div>
+                <div class="compare-card">
+                  <strong>Author Lead</strong>
+                  <p>Alex Chen · Example University · PhD student</p>
+                  <p>研究方向为 LLM inference systems，下一步使用 Author Sourcing 核验主页、GitHub 和导师信息。</p>
+                </div>
+              </div>
+              <div class="compare-card output-note">
+                <strong>Follow-up Actions</strong>
+                <p>对高优先级第一作者运行 Author Sourcing；如论文涉及活跃学生团队，将相关实验室加入 Lab Mapper。</p>
+              </div>
+              <p class="output-note">此示例与 Skill 包中的 example-output.md 一致，并非真实论文或候选人。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="story-grid">
+        <div class="story-stack">
+          <article class="story-block">
+            <span class="story-index">01 / 实际问题</span>
+            <h2>持续跟踪研究动态，本身就是一项重复工作</h2>
+            <p>论文来源多、更新快，人工筛选、写摘要、查作者和整理优先级很难每天坚持。研究动态与人才寻访之间，也需要更明确的后续行动。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">02 / 我的职责</span>
+            <h2>把每日信息处理拆成可自动执行的步骤</h2>
+            <p>我设计范围确认、论文收集与去重、相关性筛选、摘要生成、作者线索和后续行动，并结合飞书 Aime、Mira 自动生成每日速报。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">03 / 解决流程</span>
+            <h2>先减少信息噪声，再保留可行动内容</h2>
+            <ul class="flow-list">
+              <li>确定日期、研究范围、论文来源与候选人标准。</li>
+              <li>从官方论文来源收集并去重，优先高相关、重要实验室、开源代码和招聘价值。</li>
+              <li>输出简短摘要、作者线索与后续优先级，再交给 Author Sourcing 和 Lab Mapper 深挖。</li>
+            </ul>
+          </article>
+        </div>
+        <aside>
+          <div class="fact-panel">
+            <span class="story-index">04 / 技术实现</span>
+            <h2>不是摘要集合，而是可执行的信息流</h2>
+            <ul>
+              <li><strong>官方来源：</strong>会议页面、arXiv、OpenReview、ACL Anthology 或实验室页面，按标题和 ID 去重。</li>
+              <li><strong>相关性筛选：</strong>关注方法、主题、研究价值与目标方向，不为凑数量加入无关论文。</li>
+              <li><strong>自动化交付：</strong>结合飞书 Aime、Mira，生成论文摘要、作者线索和后续行动。</li>
+            </ul>
+          </div>
+          <div class="fact-panel">
+            <span class="story-index">05 / 成果数据</span>
+            <h2>每天一份速报，也每天新增人才入口</h2>
+            <p>持续为团队提供新论文摘要、作者信息和跟进优先级，让研究动态可以直接转化为候选人发现与实验室 Mapping。</p>
+            <div class="before-after">
+              <div class="compare-card"><strong>过去</strong><p>手动刷论文、复制作者、再查资料</p></div>
+              <div class="compare-card"><strong>现在</strong><p>每日速报、作者线索、行动优先级</p></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="case-footer-nav" aria-label="案例前后导航">
+        <a href="healthy-meals.html">← 上一个：Healthy Meals</a>
+        <a href="index.html">返回精选案例 →</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">独立案例预览 · 不改动原个人主页 · 示例数据已标注</footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
