@@ -1,5 +1,34 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const shouldTransition = (link) => {
+  if (link.target || link.hasAttribute("download")) return false;
+  try {
+    const url = new URL(link.href, window.location.href);
+    return url.origin === window.location.origin
+      && url.pathname !== window.location.pathname
+      && url.pathname.endsWith(".html");
+  } catch {
+    return false;
+  }
+};
+
+document.addEventListener("click", (event) => {
+  if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  const link = event.target.closest?.("a[href]");
+  if (!link || !shouldTransition(link)) return;
+
+  event.preventDefault();
+  if (document.body.classList.contains("is-leaving")) return;
+  document.body.classList.add("is-leaving");
+  window.setTimeout(() => {
+    window.location.href = link.href;
+  }, reducedMotion ? 0 : 160);
+});
+
+window.addEventListener("pageshow", () => {
+  document.body.classList.remove("is-leaving");
+});
+
 document.querySelectorAll("[data-demo]").forEach((demo) => {
   const runButton = demo.querySelector("[data-demo-run]");
   const resetButton = demo.querySelector("[data-demo-reset]");

@@ -73,8 +73,25 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--muted);
   font-size: 13px;
   white-space: nowrap;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 .site-nav a:hover, .site-nav a[aria-current="page"] { background: var(--accent-soft); color: var(--accent-strong); }
+
+main,
+.site-footer {
+  animation: page-enter 240ms ease-out both;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+body.is-leaving main,
+body.is-leaving .site-footer {
+  animation: none;
+  opacity: 0;
+  transform: translateY(-6px);
+}
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
 
 .hero {
   position: relative;
