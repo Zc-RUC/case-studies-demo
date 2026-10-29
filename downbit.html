@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Downbit Local 项目案例：直链多连接、HLS 分片、断点续传、直播录制、媒体资料库与共用任务 CLI。" />
+    <title>Downbit Local · 项目案例</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">ZC<span>/</span>CASE STUDIES</a>
+        <nav class="site-nav" aria-label="案例导航">
+          <a href="downbit.html" aria-current="page">Downbit Local</a>
+          <a href="lab-mapper.html">Lab Mapper</a>
+          <a href="ddl-mission.html">DDL.MISSION</a>
+          <a href="author-sourcing.html">Author Sourcing</a>
+          <a href="healthy-meals.html">Healthy Meals</a>
+          <a href="daily-paper-briefing.html">Daily Paper</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="section-shell">
+      <div class="breadcrumb"><a href="index.html">精选案例</a> / Downbit Local</div>
+      <section class="case-hero">
+        <p class="case-kicker">独立开发 · 本地媒体工具</p>
+        <h1>Downbit Local：<br />把网页媒体，可靠地带回本地</h1>
+        <p class="case-summary">不止是一个下载按钮：从链接解析、格式选择和断点续传，到直播录制、资料库和 CLI 联动，把完整下载流程做成一个本地工作台。</p>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://github.com/Zc-RUC/downbit-local/releases/latest" target="_blank" rel="noreferrer">下载 Release ↗</a>
+          <a class="button" href="https://github.com/Zc-RUC/downbit-local" target="_blank" rel="noreferrer">查看源码 ↗</a>
+        </div>
+      </section>
+
+      <section class="metric-strip" aria-label="项目成果概览">
+        <div class="metric"><strong>4 路</strong><span>默认直链多连接下载</span></div>
+        <div class="metric"><strong>5 个</strong><span>HLS 分片完整续传验证</span></div>
+        <div class="metric"><strong>100%</strong><span>公开视频源文件哈希一致</span></div>
+        <div class="metric"><strong>2 端</strong><span>Web 与 CLI 共用任务状态</span></div>
+      </section>
+
+      <section class="showcase" aria-labelledby="screenshot-title">
+        <div class="showcase-heading">
+          <h2 id="screenshot-title">真实产品界面</h2>
+          <p>来自本地工作台的实际浏览器截图</p>
+        </div>
+        <div class="browser">
+          <div class="browser-bar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="browser-title">Downbit Local 工作台</span>
+            <span class="demo-badge">真实截图</span>
+          </div>
+          <img src="assets/downbit.jpg" alt="Downbit Local 真实界面：暖白与陶土色工作台、链接输入、下载队列和本地资料库" loading="eager" />
+          <div class="demo-body">
+            <ol class="demo-steps">
+              <li><strong>输入</strong><br />粘贴链接或搜索内容</li>
+              <li><strong>预览</strong><br />选择画质、音频与目录</li>
+              <li><strong>下载</strong><br />多连接、分片与断点续传</li>
+              <li><strong>整理</strong><br />播放、筛选与 CLI 联动</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase" aria-labelledby="demo-title" data-demo>
+        <div class="showcase-heading">
+          <h2 id="demo-title">下载流程重放</h2>
+          <p>依据真实验收记录制作 · 不发起网络请求</p>
+        </div>
+        <div class="browser">
+          <div class="browser-bar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="browser-title">flower.mp4 · 公开 CC0 示例</span>
+            <span class="demo-badge">本地流程演示</span>
+          </div>
+          <div class="demo-body">
+            <div class="demo-input"><span class="demo-input-label">输入</span><code>https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4</code></div>
+            <div class="demo-controls">
+              <button class="button button-primary button-small" type="button" data-demo-run>运行流程演示</button>
+              <button class="button button-small" type="button" data-demo-reset>重置</button>
+              <span class="demo-status" data-demo-status></span>
+            </div>
+            <ol class="demo-steps">
+              <li data-demo-step data-status="正在识别 MP4、文件名与 Content-Length"><strong>解析</strong><br />读取响应头与媒体类型</li>
+              <li data-demo-step data-status="正在建立本地下载任务"><strong>任务</strong><br />保存目录、格式与断点信息</li>
+              <li data-demo-step data-status="正在下载并校验字节范围"><strong>下载</strong><br />Range 请求与进度恢复</li>
+              <li data-demo-step data-status="正在核对文件大小与 SHA-256"><strong>完成</strong><br />写入资料库并支持播放</li>
+            </ol>
+            <div class="demo-output" data-demo-output hidden>
+              <div class="output-heading"><h3>真实验收输出</h3><span class="badge">SHA-256 MATCH</span></div>
+              <div class="table-scroll">
+                <table class="output-table">
+                  <thead><tr><th>检查项</th><th>结果</th><th>验证</th></tr></thead>
+                  <tbody>
+                    <tr><td>公开 MP4</td><td>1,128,375 字节</td><td>与源文件哈希完全一致</td></tr>
+                    <tr><td>多连接续传</td><td>10.8% 暂停后继续</td><td>11,053,871 字节完整恢复</td></tr>
+                    <tr><td>HLS 与音频</td><td>5 个分片 · MP4 / MP3</td><td>成品解码通过</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="output-note">这里展示的是已完成的验证记录，不冒充在线下载；真实产品可从上方 Release 获取。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="story-grid">
+        <div class="story-stack">
+          <article class="story-block">
+            <span class="story-index">01 / 实际问题</span>
+            <h2>下载工具真正难的，是中途不出错</h2>
+            <p>普通链接保存只覆盖最理想的一步。真实使用中还会遇到格式分离、流媒体分片、网络中断、任务恢复、音频提取和完成后的文件管理，这些环节决定了工具是否可靠。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">02 / 我的职责</span>
+            <h2>从下载引擎，做到工作台与命令行</h2>
+            <p>我完成 React 工作台、Express 本地服务、直链与 HLS 下载、任务状态持久化、FFmpeg 处理、资料库和 CLI，并用真实媒体与受控弱网服务完成端到端验收。</p>
+          </article>
+          <article class="story-block">
+            <span class="story-index">03 / 解决流程</span>
+            <h2>围绕可恢复的任务，而不是一次性请求</h2>
+            <ul class="flow-list">
+              <li>先解析来源与格式，再创建带目录、引擎和断点信息的本地任务。</li>
+              <li>直链按 Range 分段，HLS 逐片保存；暂停和重启后从已有数据继续。</li>
+              <li>完成后自动封装、提取或写入资料库，并让网页和 CLI 共享同一份状态。</li>
+            </ul>
+          </article>
+        </div>
+        <aside>
+          <div class="fact-panel">
+            <span class="story-index">04 / 技术实现</span>
+            <h2>本地优先，但能力完整</h2>
+            <ul>
+              <li><strong>React + Vite：</strong>暖白与陶土色工作台、实时进度、封面取色和响应式布局。</li>
+              <li><strong>Node.js + Express：</strong>任务队列、SSE 状态同步、Range 媒体播放和 CLI 服务。</li>
+              <li><strong>直链 / HLS 引擎：</strong>多连接、分片续传、AES-128 与直播停止保存。</li>
+              <li><strong>yt-dlp + FFmpeg：</strong>站点解析、音频提取、合流封装与基础元数据。</li>
+            </ul>
+          </div>
+          <div class="fact-panel">
+            <span class="story-index">05 / 成果数据</span>
+            <h2>每一项能力，都用真实文件验证</h2>
+            <p>公开 MP4 与源文件 SHA-256 完全一致；11 MB 文件多连接暂停续传成功；HLS 五分片、直播保存和 192 kbps MP3 均通过解码；桌面与 390px 移动端完成浏览器验收。</p>
+            <div class="before-after">
+              <div class="compare-card"><strong>过去</strong><p>一个链接、一次请求，失败就重新开始</p></div>
+              <div class="compare-card"><strong>现在</strong><p>任务可恢复、过程可观察、结果可管理</p></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="case-footer-nav" aria-label="案例前后导航">
+        <a href="index.html">← 返回精选案例</a>
+        <a href="lab-mapper.html">下一个：Lab Mapper →</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">独立案例预览 · 真实项目截图 · 验收记录已标注</footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
