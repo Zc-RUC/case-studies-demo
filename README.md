@@ -1,6 +1,6 @@
 # 精选项目案例 Demo
 
-独立预览网站，用于展示 **Downbit Local、Lab Mapper、DDL.MISSION、Author Sourcing、Healthy Meals、Daily Paper Briefing** 六个项目案例。
+独立预览网站，用于展示 **Video Provider、Lab Mapper、DDL.MISSION、Author Sourcing、Healthy Meals、Daily Paper Briefing** 六个项目案例。
 
 在线地址：https://zc-ruc.github.io/case-studies-demo/
 
@@ -17,8 +17,8 @@
 
 ## 展示依据
 
-- Downbit Local、DDL.MISSION 和 Healthy Meals 使用真实产品界面截图。
-- Downbit Local 的流程重放基于已完成的真实下载、续传与哈希校验记录，并明确标注不发起网络请求。
+- Video Provider、DDL.MISSION 和 Healthy Meals 使用真实产品界面截图。
+- Video Provider 的流程重放基于已完成的真实下载、续传与哈希校验记录，并明确标注不发起网络请求。
 - Lab Mapper、Author Sourcing 和 Daily Paper Briefing 使用各自 Skill 包中的官方 `example-prompt` 与 `example-output`。
 - 流程演示为本地交互，不发起网络请求；页面明确标注示例数据，不冒充真实候选人或实时产品后台。
 
